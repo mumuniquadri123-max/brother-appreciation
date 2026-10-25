@@ -8,9 +8,9 @@ function App() {
           <p className="text-amber-500 font-semibold tracking-widest uppercase text-xs sm:text-sm">
             In Honor Of
           </p>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Mr. Yusuf Olufowobi
-          </h1>
+         <h1 className="text-2xl sm:text-5xl font-extrabold text-white tracking-tight">
+  <span className="whitespace-nowrap">Mr. Yusuf</span> <span className="whitespace-nowrap">Olufowobi</span>
+</h1>
           <p className="text-gray-400 text-sm sm:text-base font-medium">
             Generosity • Quiet Wisdom • Relentless Hard Work
           </p>
