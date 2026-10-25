@@ -2,15 +2,21 @@ import express from 'express'
 import cors from 'cors'
 import sqlite3 from 'sqlite3'
 import { open } from 'sqlite'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const app = express()
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 
-// Middleware: Allows React (port 5173) to send requests to Express (port 5000)
 app.use(cors())
 app.use(express.json())
 
-// Initialize SQLite Database
+// Serve static files from the React frontend build folder
+app.use(express.static(path.join(__dirname, 'dist')))
+
 let db
 
 async function setupDatabase() {
@@ -19,7 +25,6 @@ async function setupDatabase() {
     driver: sqlite3.Database
   })
 
-  // Create table for appreciation notes if it doesn't exist yet
   await db.exec(`
     CREATE TABLE IF NOT EXISTS notes (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -34,7 +39,7 @@ async function setupDatabase() {
 
 setupDatabase()
 
-// API Route 1: GET all appreciation notes from database
+// API Routes
 app.get('/api/notes', async (req, res) => {
   try {
     const notes = await db.all('SELECT * FROM notes ORDER BY created_at DESC')
@@ -44,7 +49,6 @@ app.get('/api/notes', async (req, res) => {
   }
 })
 
-// API Route 2: POST a new appreciation note into database
 app.post('/api/notes', async (req, res) => {
   const { sender_name, message } = req.body
 
@@ -71,7 +75,11 @@ app.post('/api/notes', async (req, res) => {
   }
 })
 
-// Start the Express Server
+// Catch-all route to serve React frontend for any other URL request
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'))
+})
+
 app.listen(PORT, () => {
-  console.log(`Backend server running on http://localhost:${PORT}`)
+  console.log(`Server running on port ${PORT}`)
 })

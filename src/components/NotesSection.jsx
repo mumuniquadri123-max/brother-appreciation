@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react'
 
+const API_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5000/api/notes' 
+  : '/api/notes';
+
 function NotesSection() {
   const [notes, setNotes] = useState([])
   const [senderName, setSenderName] = useState('')
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
 
-  // 1. GET Request: Fetch all notes from backend when component loads
   const fetchNotes = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/notes')
+      const response = await fetch(API_URL)
       const data = await response.json()
       setNotes(data)
     } catch (error) {
@@ -21,14 +24,13 @@ function NotesSection() {
     fetchNotes()
   }, [])
 
-  // 2. POST Request: Send new note to backend database
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!senderName || !message) return
 
     setLoading(true)
     try {
-      const response = await fetch('http://localhost:5000/api/notes', {
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -42,7 +44,7 @@ function NotesSection() {
       if (response.ok) {
         setSenderName('')
         setMessage('')
-        fetchNotes() // Refresh list with new note from database
+        fetchNotes()
       }
     } catch (error) {
       console.error('Error sending note:', error)
@@ -59,7 +61,6 @@ function NotesSection() {
         <p>Leave a note of thanks or encouragement for Mr. Yusuf Olufowobi.</p>
       </div>
 
-      {/* Note Input Form */}
       <form onSubmit={handleSubmit} className="note-form">
         <input 
           type="text" 
@@ -80,7 +81,6 @@ function NotesSection() {
         </button>
       </form>
 
-      {/* Display List of Notes from Database */}
       <div className="notes-list">
         {notes.length === 0 ? (
           <p className="no-notes">No notes added yet. Be the first to leave a message!</p>
