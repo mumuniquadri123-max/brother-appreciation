@@ -22,7 +22,7 @@ function App() {
         </blockquote>
       </header>
 
-      {/* Core Values Section (Expanded to 6 Cards) */}
+      {/* Core Values Section (All 6 Cards) */}
       <section className="values-section">
         <div className="section-header-wrap">
           <h2 className="section-heading">Core Values & Character</h2>
