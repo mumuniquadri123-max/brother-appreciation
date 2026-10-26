@@ -32,49 +32,49 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 text-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto space-y-16">
+    <div style={{ minHeight: '100vh', backgroundColor: '#0b0f17', color: '#f3f4f6', padding: '3rem 1rem', boxSizing: 'border-box' }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
         
         {/* Header Section */}
-        <header className="text-center space-y-4">
-          <p className="text-amber-500 font-semibold tracking-widest uppercase text-xs sm:text-sm">
+        <header style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <p style={{ color: '#f59e0b', fontWeight: '600', letterSpacing: '0.1em', textTransform: 'uppercase', fontSize: '0.85rem', margin: 0 }}>
             In Honor Of
           </p>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            <span className="whitespace-nowrap">Mr. Yusuf</span> <span className="whitespace-nowrap">Olufowobi</span>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: '800', color: '#ffffff', margin: 0, lineHeight: 1.2 }}>
+            <span style={{ whiteSpace: 'nowrap' }}>Mr. Yusuf</span> <span style={{ whiteSpace: 'nowrap' }}>Olufowobi</span>
           </h1>
-          <p className="text-gray-400 text-sm sm:text-base font-medium">
+          <p style={{ color: '#9ca3af', fontSize: '1rem', fontWeight: '500', margin: 0 }}>
             Generosity • Quiet Wisdom • Relentless Hard Work
           </p>
-          <blockquote className="italic text-gray-400 text-xs sm:text-sm pt-2">
+          <blockquote style={{ fontStyle: 'italic', color: '#9ca3af', fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
             "A digital tribute built with gratitude and respect."
           </blockquote>
         </header>
 
         {/* Core Values Section */}
-        <section className="space-y-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-center text-amber-500">
+        <section style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: '700', textAlign: 'center', color: '#f59e0b', margin: 0 }}>
             Core Values & Character
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gray-900 border border-gray-800 p-6 rounded-2xl shadow-xl">
-              <h3 className="text-lg font-bold text-white mb-2">Generosity</h3>
-              <p className="text-gray-400 text-sm">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
+            <div style={{ backgroundColor: '#111827', border: '1px solid #1f2937', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)' }}>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: '700', color: '#ffffff', marginTop: 0, marginBottom: '0.5rem' }}>Generosity</h3>
+              <p style={{ color: '#9ca3af', fontSize: '0.9rem', margin: 0, lineHeight: 1.5 }}>
                 Always giving selflessly to support others and investing in their growth and success.
               </p>
             </div>
             
-            <div className="bg-gray-900 border border-gray-800 p-6 rounded-2xl shadow-xl">
-              <h3 className="text-lg font-bold text-white mb-2">Quiet Wisdom</h3>
-              <p className="text-gray-400 text-sm">
+            <div style={{ backgroundColor: '#111827', border: '1px solid #1f2937', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)' }}>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: '700', color: '#ffffff', marginTop: 0, marginBottom: '0.5rem' }}>Quiet Wisdom</h3>
+              <p style={{ color: '#9ca3af', fontSize: '0.9rem', margin: 0, lineHeight: 1.5 }}>
                 Offering thoughtful advice and leading by calm, measured example.
               </p>
             </div>
             
-            <div className="bg-gray-900 border border-gray-800 p-6 rounded-2xl shadow-xl">
-              <h3 className="text-lg font-bold text-white mb-2">Relentless Hard Work</h3>
-              <p className="text-gray-400 text-sm">
+            <div style={{ backgroundColor: '#111827', border: '1px solid #1f2937', padding: '1.5rem', borderRadius: '1rem', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)' }}>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: '700', color: '#ffffff', marginTop: 0, marginBottom: '0.5rem' }}>Relentless Hard Work</h3>
+              <p style={{ color: '#9ca3af', fontSize: '0.9rem', margin: 0, lineHeight: 1.5 }}>
                 Demonstrating dedication and perseverance in every commitment.
               </p>
             </div>
@@ -82,14 +82,14 @@ function App() {
         </section>
 
         {/* Notes / Tribute Wall Section */}
-        <section className="space-y-8 bg-gray-900/50 border border-gray-800/80 p-6 sm:p-8 rounded-3xl shadow-2xl">
-          <h2 className="text-2xl font-bold text-center text-white">
+        <section style={{ backgroundColor: 'rgba(17, 24, 39, 0.7)', border: '1px solid #1f2937', padding: '2rem', borderRadius: '1.5rem', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5)', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: '700', textAlign: 'center', color: '#ffffff', margin: 0 }}>
             Leave a Tribute Note
           </h2>
 
-          <form onSubmit={handleSubmit} className="space-y-4 max-w-xl mx-auto">
-            <div>
-              <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '550px', width: '100%', margin: '0 auto' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+              <label style={{ fontSize: '0.75rem', fontWeight: '600', color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Your Name
               </label>
               <input
@@ -98,12 +98,12 @@ function App() {
                 onChange={(e) => setSenderName(e.target.value)}
                 placeholder="Enter your name..."
                 required
-                className="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-amber-500 transition-colors"
+                style={{ width: '100%', backgroundColor: '#0b0f17', border: '1px solid #1f2937', borderRadius: '0.75rem', padding: '0.75rem 1rem', color: '#ffffff', fontSize: '0.95rem', boxSizing: 'border-box' }}
               />
             </div>
 
-            <div>
-              <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+              <label style={{ fontSize: '0.75rem', fontWeight: '600', color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Your Message
               </label>
               <textarea
@@ -112,39 +112,39 @@ function App() {
                 placeholder="Write your appreciation message..."
                 rows="4"
                 required
-                className="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-amber-500 transition-colors resize-none"
+                style={{ width: '100%', backgroundColor: '#0b0f17', border: '1px solid #1f2937', borderRadius: '0.75rem', padding: '0.75rem 1rem', color: '#ffffff', fontSize: '0.95rem', resize: 'none', boxSizing: 'border-box' }}
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold py-3 px-6 rounded-xl transition-colors shadow-lg"
+              style={{ width: '100%', backgroundColor: '#f59e0b', color: '#0b0f17', fontWeight: '700', padding: '0.85rem 1.5rem', borderRadius: '0.75rem', border: 'none', cursor: 'pointer', fontSize: '1rem', marginTop: '0.5rem' }}
             >
               Send Tribute
             </button>
           </form>
 
           {/* Display Notes Feed */}
-          <div className="space-y-4 pt-6 border-t border-gray-800">
-            <h3 className="text-lg font-bold text-gray-200 text-center">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingTop: '1.5rem', borderTop: '1px solid #1f2937' }}>
+            <h3 style={{ fontSize: '1.15rem', fontWeight: '700', color: '#e5e7eb', textAlign: 'center', margin: 0 }}>
               Appreciation Wall ({notes.length})
             </h3>
 
-            <div className="space-y-4 max-w-xl mx-auto">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '550px', width: '100%', margin: '0 auto' }}>
               {notes.length === 0 ? (
-                <p className="text-center text-gray-500 text-sm italic">
+                <p style={{ textAlign: 'center', color: '#6b7280', fontSize: '0.9rem', fontStyle: 'italic' }}>
                   No notes yet. Be the first to leave a tribute!
                 </p>
               ) : (
                 notes.map((note) => (
                   <div
                     key={note.id}
-                    className="bg-gray-950 border border-gray-800 p-5 rounded-2xl space-y-2 shadow-md"
+                    style={{ backgroundColor: '#0b0f17', border: '1px solid #1f2937', padding: '1.25rem', borderRadius: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}
                   >
-                    <p className="text-gray-200 text-sm sm:text-base italic">
+                    <p style={{ color: '#e5e7eb', fontSize: '0.95rem', fontStyle: 'italic', margin: 0 }}>
                       "{note.message}"
                     </p>
-                    <p className="text-amber-500 font-semibold text-xs text-right">
+                    <p style={{ color: '#f59e0b', fontWeight: '600', fontSize: '0.8rem', textAlign: 'right', margin: 0 }}>
                       — {note.sender_name}
                     </p>
                   </div>
