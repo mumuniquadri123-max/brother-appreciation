@@ -8,7 +8,9 @@ function App() {
     <div className="app-container">
       {/* Header Section */}
       <header className="header-section">
-        <p className="subtitle-honor">In Honor Of</p>
+        <div className="badge-wrapper">
+          <span className="honor-badge">In Honor Of</span>
+        </div>
         <h1 className="main-title">
           <span className="nowrap">Mr. Yusuf</span> <span className="nowrap">Olufowobi</span>
         </h1>
@@ -16,29 +18,41 @@ function App() {
           Generosity • Quiet Wisdom • Relentless Hard Work
         </p>
         <blockquote className="tribute-quote">
-          "A digital tribute built with gratitude and respect."
+          "A digital tribute built with gratitude, respect, and enduring appreciation."
         </blockquote>
       </header>
 
-      {/* Core Values Section */}
+      {/* Core Values Section (Expanded to 6 Cards) */}
       <section className="values-section">
-        <h2 className="section-heading">Core Values & Character</h2>
+        <div className="section-header-wrap">
+          <h2 className="section-heading">Core Values & Character</h2>
+          <p className="section-subtext">The foundational pillars that define his remarkable impact.</p>
+        </div>
+        
         <div className="values-grid">
           <ValueCard 
             title="Generosity" 
-            description="Always giving selflessly to support others and investing in their growth and success." 
+            description="Always giving selflessly to support others and investing wholeheartedly in their growth and success." 
           />
           <ValueCard 
             title="Quiet Wisdom" 
-            description="Offering thoughtful advice and leading by calm, measured example." 
+            description="Offering thoughtful, measured guidance and leading by a calm, dependable example." 
           />
           <ValueCard 
             title="Relentless Hard Work" 
-            description="Demonstrating dedication and perseverance in every commitment." 
+            description="Demonstrating extraordinary dedication, discipline, and perseverance in every commitment." 
           />
           <ValueCard 
             title="Faith & Integrity" 
-            description="Living with sincere principles, humility, and devotion." 
+            description="Living with sincere principles, unwavering moral clarity, and deep personal devotion." 
+          />
+          <ValueCard 
+            title="Patience & Grace" 
+            description="Approaching challenges with a steady temperament, extending grace and understanding to all." 
+          />
+          <ValueCard 
+            title="Inspiring Legacy" 
+            description="Creating lasting positive impact that empowers future generations to strive for excellence." 
           />
         </div>
       </section>
