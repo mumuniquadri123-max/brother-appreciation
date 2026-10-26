@@ -18,7 +18,7 @@ function LetterSection() {
             me to put in my absolute best effort every single day.
           </p>
           <p>
-            This website is a small testament to your impact on my life—a live showcase of what your investment 
+            This website is a small testament to your impact on my life. a live showcase of what your investment 
             is helping me build. Thank you for believing in me even when I was just starting out.
           </p>
         </div>
